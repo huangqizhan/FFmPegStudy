@@ -1,0 +1,18 @@
+//
+//  Macro.pch
+//  FFM
+//
+//  Created by 黄麒展 on 2019/12/12.
+//  Copyright © 2019 8km. All rights reserved.
+//
+
+#ifndef Macro_pch
+#define Macro_pch
+
+#ifdef __OBJC__
+
+#import "PathCommon.h"
+
+#endif
+
+#endif /* Macro_pch */
