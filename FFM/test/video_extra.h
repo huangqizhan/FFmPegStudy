@@ -13,5 +13,5 @@
 
 #endif /* video_extra_h */
 
-
+/// 提取h264数据
 int video_exteac(const char *scr_filename,const char *out_filename);

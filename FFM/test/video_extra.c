@@ -127,7 +127,7 @@ int h264_extradata_to_annexb(const uint8_t *codec_extradata,const int codec_extr
                "The resulting stream may not play.\n");
     
     out_extradata->data      = out;
-    out_extradata->size      = total_size;
+//    out_extradata->size      = total_size;
     
     return length_size;
 }
