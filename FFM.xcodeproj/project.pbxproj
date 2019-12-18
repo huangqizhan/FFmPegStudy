@@ -31,6 +31,9 @@
 		BA163DF123A27D49001BEEBA /* PathCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = BA163DF023A27D49001BEEBA /* PathCommon.m */; };
 		BA163DF523A4B5CE001BEEBA /* video_extra.c in Sources */ = {isa = PBXBuildFile; fileRef = BA163DF423A4B5CE001BEEBA /* video_extra.c */; };
 		BA163DF723A67271001BEEBA /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BA163DF623A67271001BEEBA /* 1.mp4 */; };
+		BA163E0723AA6F6C001BEEBA /* video_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = BA163E0123AA6F6B001BEEBA /* video_filter.c */; };
+		BA163E0823AA6F6C001BEEBA /* remixing_video.c in Sources */ = {isa = PBXBuildFile; fileRef = BA163E0323AA6F6B001BEEBA /* remixing_video.c */; };
+		BA163E0923AA6F6C001BEEBA /* sdl_player.c in Sources */ = {isa = PBXBuildFile; fileRef = BA163E0623AA6F6B001BEEBA /* sdl_player.c */; };
 		BA26939C23351DE0000B0135 /* m1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = BA26939B23351DE0000B0135 /* m1.mp4 */; };
 		BA67309F235DF84B008163EA /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA673098235DF84B008163EA /* libavutil.a */; };
 		BA6730A0235DF84B008163EA /* libavfilter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA673099235DF84B008163EA /* libavfilter.a */; };
@@ -45,6 +48,7 @@
 		BA6731CF2360975C008163EA /* 111.aac in Resources */ = {isa = PBXBuildFile; fileRef = BA6731CD2360975B008163EA /* 111.aac */; };
 		BA6731D02360975C008163EA /* wd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA6731CE2360975B008163EA /* wd.mp3 */; };
 		BA6731D223609B10008163EA /* hg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA6731D123609B0F008163EA /* hg.mp3 */; };
+		BAF9220223AA70DC00BB262B /* pure_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = BAF9220123AA70DC00BB262B /* pure_filter.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,12 @@
 		BA163DF323A4B5CE001BEEBA /* video_extra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = video_extra.h; sourceTree = "<group>"; };
 		BA163DF423A4B5CE001BEEBA /* video_extra.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = video_extra.c; sourceTree = "<group>"; };
 		BA163DF623A67271001BEEBA /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
+		BA163E0123AA6F6B001BEEBA /* video_filter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = video_filter.c; sourceTree = "<group>"; };
+		BA163E0223AA6F6B001BEEBA /* sdl_player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sdl_player.h; sourceTree = "<group>"; };
+		BA163E0323AA6F6B001BEEBA /* remixing_video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = remixing_video.c; sourceTree = "<group>"; };
+		BA163E0423AA6F6B001BEEBA /* video_filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_filter.h; sourceTree = "<group>"; };
+		BA163E0523AA6F6B001BEEBA /* remixing_video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remixing_video.h; sourceTree = "<group>"; };
+		BA163E0623AA6F6B001BEEBA /* sdl_player.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sdl_player.c; sourceTree = "<group>"; };
 		BA26939B23351DE0000B0135 /* m1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = m1.mp4; sourceTree = "<group>"; };
 		BA673020235DF84A008163EA /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		BA673021235DF84A008163EA /* buffersrc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffersrc.h; sourceTree = "<group>"; };
@@ -210,6 +220,8 @@
 		BA6731CD2360975B008163EA /* 111.aac */ = {isa = PBXFileReference; lastKnownFileType = file; path = 111.aac; sourceTree = "<group>"; };
 		BA6731CE2360975B008163EA /* wd.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wd.mp3; sourceTree = "<group>"; };
 		BA6731D123609B0F008163EA /* hg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hg.mp3; sourceTree = "<group>"; };
+		BAF9220023AA70DC00BB262B /* pure_filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pure_filter.h; sourceTree = "<group>"; };
+		BAF9220123AA70DC00BB262B /* pure_filter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pure_filter.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +319,14 @@
 		BA163DE423A13F91001BEEBA /* test */ = {
 			isa = PBXGroup;
 			children = (
+				BAF9220123AA70DC00BB262B /* pure_filter.c */,
+				BAF9220023AA70DC00BB262B /* pure_filter.h */,
+				BA163E0323AA6F6B001BEEBA /* remixing_video.c */,
+				BA163E0523AA6F6B001BEEBA /* remixing_video.h */,
+				BA163E0623AA6F6B001BEEBA /* sdl_player.c */,
+				BA163E0223AA6F6B001BEEBA /* sdl_player.h */,
+				BA163E0123AA6F6B001BEEBA /* video_filter.c */,
+				BA163E0423AA6F6B001BEEBA /* video_filter.h */,
 				BA163DE523A13FA7001BEEBA /* dump.h */,
 				BA163DE623A13FA7001BEEBA /* dump.c */,
 				BA163DF323A4B5CE001BEEBA /* video_extra.h */,
@@ -631,13 +651,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA163E0923AA6F6C001BEEBA /* sdl_player.c in Sources */,
 				280FA8F82334758200F442C8 /* ViewController.m in Sources */,
+				BA163E0723AA6F6C001BEEBA /* video_filter.c in Sources */,
 				BA163DF123A27D49001BEEBA /* PathCommon.m in Sources */,
+				BA163E0823AA6F6C001BEEBA /* remixing_video.c in Sources */,
 				BA163DF523A4B5CE001BEEBA /* video_extra.c in Sources */,
 				BA6731CC23608ED5008163EA /* accompany_decoder.cpp in Sources */,
 				BA6731C923608E45008163EA /* packet_pool.cpp in Sources */,
 				280FA9032334758300F442C8 /* main.m in Sources */,
 				BA6731C623608DF2008163EA /* packet_queue.cpp in Sources */,
+				BAF9220223AA70DC00BB262B /* pure_filter.c in Sources */,
 				BA163DE723A13FA7001BEEBA /* dump.c in Sources */,
 				280FA8F52334758200F442C8 /* AppDelegate.m in Sources */,
 			);
