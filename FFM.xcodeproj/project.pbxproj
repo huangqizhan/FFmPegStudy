@@ -49,6 +49,9 @@
 		BA6731D02360975C008163EA /* wd.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA6731CE2360975B008163EA /* wd.mp3 */; };
 		BA6731D223609B10008163EA /* hg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA6731D123609B0F008163EA /* hg.mp3 */; };
 		BAF9220223AA70DC00BB262B /* pure_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = BAF9220123AA70DC00BB262B /* pure_filter.c */; };
+		BAF9220C23AE656300BB262B /* ffmpeg_config_info.c in Sources */ = {isa = PBXBuildFile; fileRef = BAF9220623AE656300BB262B /* ffmpeg_config_info.c */; };
+		BAF9220D23AE656300BB262B /* camera.c in Sources */ = {isa = PBXBuildFile; fileRef = BAF9220823AE656300BB262B /* camera.c */; };
+		BAF9220E23AE656300BB262B /* remote_pull_stream.c in Sources */ = {isa = PBXBuildFile; fileRef = BAF9220A23AE656300BB262B /* remote_pull_stream.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -222,6 +225,12 @@
 		BA6731D123609B0F008163EA /* hg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hg.mp3; sourceTree = "<group>"; };
 		BAF9220023AA70DC00BB262B /* pure_filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pure_filter.h; sourceTree = "<group>"; };
 		BAF9220123AA70DC00BB262B /* pure_filter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pure_filter.c; sourceTree = "<group>"; };
+		BAF9220623AE656300BB262B /* ffmpeg_config_info.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ffmpeg_config_info.c; sourceTree = "<group>"; };
+		BAF9220723AE656300BB262B /* ffmpeg_config_info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffmpeg_config_info.h; sourceTree = "<group>"; };
+		BAF9220823AE656300BB262B /* camera.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = camera.c; sourceTree = "<group>"; };
+		BAF9220923AE656300BB262B /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
+		BAF9220A23AE656300BB262B /* remote_pull_stream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = remote_pull_stream.c; sourceTree = "<group>"; };
+		BAF9220B23AE656300BB262B /* remote_pull_stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remote_pull_stream.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,18 +328,14 @@
 		BA163DE423A13F91001BEEBA /* test */ = {
 			isa = PBXGroup;
 			children = (
-				BAF9220123AA70DC00BB262B /* pure_filter.c */,
-				BAF9220023AA70DC00BB262B /* pure_filter.h */,
-				BA163E0323AA6F6B001BEEBA /* remixing_video.c */,
-				BA163E0523AA6F6B001BEEBA /* remixing_video.h */,
-				BA163E0623AA6F6B001BEEBA /* sdl_player.c */,
-				BA163E0223AA6F6B001BEEBA /* sdl_player.h */,
-				BA163E0123AA6F6B001BEEBA /* video_filter.c */,
-				BA163E0423AA6F6B001BEEBA /* video_filter.h */,
-				BA163DE523A13FA7001BEEBA /* dump.h */,
-				BA163DE623A13FA7001BEEBA /* dump.c */,
-				BA163DF323A4B5CE001BEEBA /* video_extra.h */,
-				BA163DF423A4B5CE001BEEBA /* video_extra.c */,
+				BAF9222123AE686F00BB262B /* 提取h264 */,
+				BAF9222023AE685100BB262B /* sdl视频播放 */,
+				BAF9221F23AE683200BB262B /* 格式转换 */,
+				BAF9221E23AE681B00BB262B /* dump */,
+				BAF9221D23AE67F900BB262B /* 滤镜 */,
+				BAF9221C23AE67CD00BB262B /* 推流到远端服务器 */,
+				BAF9221B23AE67B400BB262B /* ffmpeg配置 */,
+				BAF9221A23AE679D00BB262B /* 本地摄像头 */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -576,6 +581,80 @@
 			path = coder;
 			sourceTree = "<group>";
 		};
+		BAF9221A23AE679D00BB262B /* 本地摄像头 */ = {
+			isa = PBXGroup;
+			children = (
+				BAF9220823AE656300BB262B /* camera.c */,
+				BAF9220923AE656300BB262B /* camera.h */,
+			);
+			path = "本地摄像头";
+			sourceTree = "<group>";
+		};
+		BAF9221B23AE67B400BB262B /* ffmpeg配置 */ = {
+			isa = PBXGroup;
+			children = (
+				BAF9220623AE656300BB262B /* ffmpeg_config_info.c */,
+				BAF9220723AE656300BB262B /* ffmpeg_config_info.h */,
+			);
+			path = "ffmpeg配置";
+			sourceTree = "<group>";
+		};
+		BAF9221C23AE67CD00BB262B /* 推流到远端服务器 */ = {
+			isa = PBXGroup;
+			children = (
+				BAF9220A23AE656300BB262B /* remote_pull_stream.c */,
+				BAF9220B23AE656300BB262B /* remote_pull_stream.h */,
+			);
+			path = "推流到远端服务器";
+			sourceTree = "<group>";
+		};
+		BAF9221D23AE67F900BB262B /* 滤镜 */ = {
+			isa = PBXGroup;
+			children = (
+				BAF9220123AA70DC00BB262B /* pure_filter.c */,
+				BAF9220023AA70DC00BB262B /* pure_filter.h */,
+				BA163E0123AA6F6B001BEEBA /* video_filter.c */,
+				BA163E0423AA6F6B001BEEBA /* video_filter.h */,
+			);
+			path = "滤镜";
+			sourceTree = "<group>";
+		};
+		BAF9221E23AE681B00BB262B /* dump */ = {
+			isa = PBXGroup;
+			children = (
+				BA163DE523A13FA7001BEEBA /* dump.h */,
+				BA163DE623A13FA7001BEEBA /* dump.c */,
+			);
+			path = dump;
+			sourceTree = "<group>";
+		};
+		BAF9221F23AE683200BB262B /* 格式转换 */ = {
+			isa = PBXGroup;
+			children = (
+				BA163E0323AA6F6B001BEEBA /* remixing_video.c */,
+				BA163E0523AA6F6B001BEEBA /* remixing_video.h */,
+			);
+			path = "格式转换";
+			sourceTree = "<group>";
+		};
+		BAF9222023AE685100BB262B /* sdl视频播放 */ = {
+			isa = PBXGroup;
+			children = (
+				BA163E0623AA6F6B001BEEBA /* sdl_player.c */,
+				BA163E0223AA6F6B001BEEBA /* sdl_player.h */,
+			);
+			path = "sdl视频播放";
+			sourceTree = "<group>";
+		};
+		BAF9222123AE686F00BB262B /* 提取h264 */ = {
+			isa = PBXGroup;
+			children = (
+				BA163DF323A4B5CE001BEEBA /* video_extra.h */,
+				BA163DF423A4B5CE001BEEBA /* video_extra.c */,
+			);
+			path = "提取h264";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -651,15 +730,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF9220C23AE656300BB262B /* ffmpeg_config_info.c in Sources */,
 				BA163E0923AA6F6C001BEEBA /* sdl_player.c in Sources */,
 				280FA8F82334758200F442C8 /* ViewController.m in Sources */,
 				BA163E0723AA6F6C001BEEBA /* video_filter.c in Sources */,
 				BA163DF123A27D49001BEEBA /* PathCommon.m in Sources */,
 				BA163E0823AA6F6C001BEEBA /* remixing_video.c in Sources */,
 				BA163DF523A4B5CE001BEEBA /* video_extra.c in Sources */,
+				BAF9220E23AE656300BB262B /* remote_pull_stream.c in Sources */,
 				BA6731CC23608ED5008163EA /* accompany_decoder.cpp in Sources */,
 				BA6731C923608E45008163EA /* packet_pool.cpp in Sources */,
 				280FA9032334758300F442C8 /* main.m in Sources */,
+				BAF9220D23AE656300BB262B /* camera.c in Sources */,
 				BA6731C623608DF2008163EA /* packet_queue.cpp in Sources */,
 				BAF9220223AA70DC00BB262B /* pure_filter.c in Sources */,
 				BA163DE723A13FA7001BEEBA /* dump.c in Sources */,
