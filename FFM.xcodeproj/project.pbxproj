@@ -27,6 +27,7 @@
 		280FA9772334A0A900F442C8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280FA9762334A0A900F442C8 /* AudioToolbox.framework */; };
 		280FA9792334A0B600F442C8 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280FA9782334A0B600F442C8 /* VideoToolbox.framework */; };
 		280FA97B2334A0C400F442C8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280FA97A2334A0C400F442C8 /* CoreMedia.framework */; };
+		BA105C4023BA2DE3004C259F /* cut_video.c in Sources */ = {isa = PBXBuildFile; fileRef = BA105C3F23BA2DE3004C259F /* cut_video.c */; };
 		BA163DE723A13FA7001BEEBA /* dump.c in Sources */ = {isa = PBXBuildFile; fileRef = BA163DE623A13FA7001BEEBA /* dump.c */; };
 		BA163DF123A27D49001BEEBA /* PathCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = BA163DF023A27D49001BEEBA /* PathCommon.m */; };
 		BA163DF523A4B5CE001BEEBA /* video_extra.c in Sources */ = {isa = PBXBuildFile; fileRef = BA163DF423A4B5CE001BEEBA /* video_extra.c */; };
@@ -79,6 +80,8 @@
 		280FA9762334A0A900F442C8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		280FA9782334A0B600F442C8 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		280FA97A2334A0C400F442C8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		BA105C3E23BA2DE3004C259F /* cut_video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cut_video.h; sourceTree = "<group>"; };
+		BA105C3F23BA2DE3004C259F /* cut_video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cut_video.c; sourceTree = "<group>"; };
 		BA163DE523A13FA7001BEEBA /* dump.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dump.h; sourceTree = "<group>"; };
 		BA163DE623A13FA7001BEEBA /* dump.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dump.c; sourceTree = "<group>"; };
 		BA163DEF23A27D49001BEEBA /* PathCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathCommon.h; sourceTree = "<group>"; };
@@ -325,9 +328,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA105C3D23BA2DE3004C259F /* 裁剪视频 */ = {
+			isa = PBXGroup;
+			children = (
+				BA105C3E23BA2DE3004C259F /* cut_video.h */,
+				BA105C3F23BA2DE3004C259F /* cut_video.c */,
+			);
+			path = "裁剪视频";
+			sourceTree = "<group>";
+		};
 		BA163DE423A13F91001BEEBA /* test */ = {
 			isa = PBXGroup;
 			children = (
+				BA105C3D23BA2DE3004C259F /* 裁剪视频 */,
 				BAF9222123AE686F00BB262B /* 提取h264 */,
 				BAF9222023AE685100BB262B /* sdl视频播放 */,
 				BAF9221F23AE683200BB262B /* 格式转换 */,
@@ -735,6 +748,7 @@
 				280FA8F82334758200F442C8 /* ViewController.m in Sources */,
 				BA163E0723AA6F6C001BEEBA /* video_filter.c in Sources */,
 				BA163DF123A27D49001BEEBA /* PathCommon.m in Sources */,
+				BA105C4023BA2DE3004C259F /* cut_video.c in Sources */,
 				BA163E0823AA6F6C001BEEBA /* remixing_video.c in Sources */,
 				BA163DF523A4B5CE001BEEBA /* video_extra.c in Sources */,
 				BAF9220E23AE656300BB262B /* remote_pull_stream.c in Sources */,
