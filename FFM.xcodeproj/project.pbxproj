@@ -28,6 +28,7 @@
 		280FA9792334A0B600F442C8 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280FA9782334A0B600F442C8 /* VideoToolbox.framework */; };
 		280FA97B2334A0C400F442C8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280FA97A2334A0C400F442C8 /* CoreMedia.framework */; };
 		BA105C4023BA2DE3004C259F /* cut_video.c in Sources */ = {isa = PBXBuildFile; fileRef = BA105C3F23BA2DE3004C259F /* cut_video.c */; };
+		BA105C4823BE3EC8004C259F /* video_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = BA105C4723BE3EC8004C259F /* video_encode.c */; };
 		BA163DE723A13FA7001BEEBA /* dump.c in Sources */ = {isa = PBXBuildFile; fileRef = BA163DE623A13FA7001BEEBA /* dump.c */; };
 		BA163DF123A27D49001BEEBA /* PathCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = BA163DF023A27D49001BEEBA /* PathCommon.m */; };
 		BA163DF523A4B5CE001BEEBA /* video_extra.c in Sources */ = {isa = PBXBuildFile; fileRef = BA163DF423A4B5CE001BEEBA /* video_extra.c */; };
@@ -82,6 +83,8 @@
 		280FA97A2334A0C400F442C8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		BA105C3E23BA2DE3004C259F /* cut_video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cut_video.h; sourceTree = "<group>"; };
 		BA105C3F23BA2DE3004C259F /* cut_video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cut_video.c; sourceTree = "<group>"; };
+		BA105C4623BE3EC8004C259F /* video_encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_encode.h; sourceTree = "<group>"; };
+		BA105C4723BE3EC8004C259F /* video_encode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = video_encode.c; sourceTree = "<group>"; };
 		BA163DE523A13FA7001BEEBA /* dump.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dump.h; sourceTree = "<group>"; };
 		BA163DE623A13FA7001BEEBA /* dump.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dump.c; sourceTree = "<group>"; };
 		BA163DEF23A27D49001BEEBA /* PathCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathCommon.h; sourceTree = "<group>"; };
@@ -337,9 +340,19 @@
 			path = "裁剪视频";
 			sourceTree = "<group>";
 		};
+		BA105C4523BE3EC8004C259F /* 视频编码 */ = {
+			isa = PBXGroup;
+			children = (
+				BA105C4623BE3EC8004C259F /* video_encode.h */,
+				BA105C4723BE3EC8004C259F /* video_encode.c */,
+			);
+			path = "视频编码";
+			sourceTree = "<group>";
+		};
 		BA163DE423A13F91001BEEBA /* test */ = {
 			isa = PBXGroup;
 			children = (
+				BA105C4523BE3EC8004C259F /* 视频编码 */,
 				BA105C3D23BA2DE3004C259F /* 裁剪视频 */,
 				BAF9222123AE686F00BB262B /* 提取h264 */,
 				BAF9222023AE685100BB262B /* sdl视频播放 */,
@@ -758,6 +771,7 @@
 				BAF9220D23AE656300BB262B /* camera.c in Sources */,
 				BA6731C623608DF2008163EA /* packet_queue.cpp in Sources */,
 				BAF9220223AA70DC00BB262B /* pure_filter.c in Sources */,
+				BA105C4823BE3EC8004C259F /* video_encode.c in Sources */,
 				BA163DE723A13FA7001BEEBA /* dump.c in Sources */,
 				280FA8F52334758200F442C8 /* AppDelegate.m in Sources */,
 			);

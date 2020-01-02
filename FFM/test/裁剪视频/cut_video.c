@@ -142,6 +142,7 @@ int cut_video(double from_second,double end_second,const char *in_filename,const
         pkt.duration = (int)av_rescale_q((int64_t)pkt.duration, in_stream->time_base, out_stream->time_base);
         pkt.pos = -1;
         log_packet(ofmt_ctx, &pkt, "out");
+        /// 每一帧的pts必须在dts之前 （先编解码再显示 ）
         if(pkt.pts < pkt.dts) {
             continue;
         }
