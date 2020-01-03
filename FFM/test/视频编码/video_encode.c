@@ -15,11 +15,11 @@
 int video_encode(const char *file_name,const char *code_name){
     AVCodecContext *code_ctx;
     AVCodec *codec;
-    int i ,ret,x,y,got_output;
+    int i ,ret,x,y;
     FILE *file;
     AVFrame *frame;
     AVPacket *packet = NULL;
-    uint8_t encode[] = {0,0,1,0xb7};
+    uint8_t endcode[] = {0,0,1,0xb7};
     
     /// 查找AVCodec
     codec = avcodec_find_decoder_by_name(code_name);
@@ -76,13 +76,6 @@ int video_encode(const char *file_name,const char *code_name){
     frame->format = code_ctx->pix_fmt;
     frame->width = code_ctx->width;
     frame->height = code_ctx->height;
-    
-    /// 填充数据
-    ret = av_frame_get_buffer(frame, 32);
-    if (ret < 0) {
-        printf("frame allocte data error \n");
-        goto end;
-    }
 
     /// 填充每一帧数据
     for (i = 0; i < 25; i++) {
@@ -117,8 +110,6 @@ int video_encode(const char *file_name,const char *code_name){
         
         /// 编码图像数据
         
-//        avcodec_encode_video2
-        
         ret = avcodec_receive_packet(code_ctx, packet);
         if (ret < 0) {
             printf("receive frame to code_ctx error \n");
@@ -131,15 +122,54 @@ int video_encode(const char *file_name,const char *code_name){
             goto end;
         }
         
-       size_t rt = fwrite(packet->data, 1, packet->size, file);
+        /// 填充数据
+        ret = av_frame_get_buffer(frame, 32);
+        if (ret < 0 && ret != AVERROR_EOF && ret != AVERROR(EAGAIN)) {
+            printf("frame allocte data error \n");
+            goto end;
+        }
+        
+        size_t rt = fwrite(packet->data, 1, packet->size, file);
+        av_packet_unref(packet);
         if (rt < 0) {
             printf("write data error \n");
             goto end;
         }
-        
     }
+    /* add sequence end code to have a real MPEG file */
+    fwrite(endcode, 1, sizeof(endcode), file);
+    fclose(file);
     
+    avcodec_free_context(&code_ctx);
+    av_frame_free(&frame);
 end:
     return 0;
     
+}
+
+
+
+int av_encode_frame(AVCodecContext *enc_ctx, AVFrame *frame, AVPacket *packet){
+    int ret = -1;
+    // 第一次发送flush packet会返回成功，进入冲洗模式，可调用avcodec_receive_packet()
+    // 将编码器中缓存的帧(可能不止一个)取出来
+    // 后续再发送flush packet将返回AVERROR_EOF
+    ret = avcodec_send_frame(enc_ctx, frame);
+    if (ret == AVERROR_EOF){
+        //av_log(NULL, AV_LOG_INFO, "avcodec_send_frame() encoder flushed\n");
+    }else if (ret == AVERROR(EAGAIN)){
+        //av_log(NULL, AV_LOG_INFO, "avcodec_send_frame() need output read out\n");
+    }else if (ret < 0){
+        //av_log(NULL, AV_LOG_INFO, "avcodec_send_frame() error %d\n", ret);
+        return ret;
+    }
+    
+    ret = avcodec_receive_packet(enc_ctx, packet);
+    if (ret == AVERROR_EOF){
+        av_log(NULL, AV_LOG_INFO, "avcodec_recieve_packet() encoder flushed\n");
+    }else if (ret == AVERROR(EAGAIN)){
+        //av_log(NULL, AV_LOG_INFO, "avcodec_recieve_packet() need more input\n");
+    }
+    
+    return ret;
 }
