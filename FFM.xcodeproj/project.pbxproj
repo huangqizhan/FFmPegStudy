@@ -29,6 +29,8 @@
 		280FA97B2334A0C400F442C8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280FA97A2334A0C400F442C8 /* CoreMedia.framework */; };
 		BA105C4023BA2DE3004C259F /* cut_video.c in Sources */ = {isa = PBXBuildFile; fileRef = BA105C3F23BA2DE3004C259F /* cut_video.c */; };
 		BA105C4823BE3EC8004C259F /* video_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = BA105C4723BE3EC8004C259F /* video_encode.c */; };
+		BA105C4C23BF8B42004C259F /* video_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = BA105C4B23BF8B42004C259F /* video_decode.c */; };
+		BA105C5023CDE921004C259F /* video_mux.c in Sources */ = {isa = PBXBuildFile; fileRef = BA105C4F23CDE921004C259F /* video_mux.c */; };
 		BA163DE723A13FA7001BEEBA /* dump.c in Sources */ = {isa = PBXBuildFile; fileRef = BA163DE623A13FA7001BEEBA /* dump.c */; };
 		BA163DF123A27D49001BEEBA /* PathCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = BA163DF023A27D49001BEEBA /* PathCommon.m */; };
 		BA163DF523A4B5CE001BEEBA /* video_extra.c in Sources */ = {isa = PBXBuildFile; fileRef = BA163DF423A4B5CE001BEEBA /* video_extra.c */; };
@@ -85,6 +87,10 @@
 		BA105C3F23BA2DE3004C259F /* cut_video.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cut_video.c; sourceTree = "<group>"; };
 		BA105C4623BE3EC8004C259F /* video_encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_encode.h; sourceTree = "<group>"; };
 		BA105C4723BE3EC8004C259F /* video_encode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = video_encode.c; sourceTree = "<group>"; };
+		BA105C4A23BF8B42004C259F /* video_decode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = video_decode.h; sourceTree = "<group>"; };
+		BA105C4B23BF8B42004C259F /* video_decode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = video_decode.c; sourceTree = "<group>"; };
+		BA105C4E23CDE921004C259F /* video_mux.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = video_mux.h; sourceTree = "<group>"; };
+		BA105C4F23CDE921004C259F /* video_mux.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = video_mux.c; sourceTree = "<group>"; };
 		BA163DE523A13FA7001BEEBA /* dump.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dump.h; sourceTree = "<group>"; };
 		BA163DE623A13FA7001BEEBA /* dump.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dump.c; sourceTree = "<group>"; };
 		BA163DEF23A27D49001BEEBA /* PathCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathCommon.h; sourceTree = "<group>"; };
@@ -349,9 +355,29 @@
 			path = "视频编码";
 			sourceTree = "<group>";
 		};
+		BA105C4923BF8B0B004C259F /* 视屏解码 */ = {
+			isa = PBXGroup;
+			children = (
+				BA105C4A23BF8B42004C259F /* video_decode.h */,
+				BA105C4B23BF8B42004C259F /* video_decode.c */,
+			);
+			path = "视屏解码";
+			sourceTree = "<group>";
+		};
+		BA105C4D23CDE907004C259F /* 小咖修 */ = {
+			isa = PBXGroup;
+			children = (
+				BA105C4E23CDE921004C259F /* video_mux.h */,
+				BA105C4F23CDE921004C259F /* video_mux.c */,
+			);
+			path = "小咖修";
+			sourceTree = "<group>";
+		};
 		BA163DE423A13F91001BEEBA /* test */ = {
 			isa = PBXGroup;
 			children = (
+				BA105C4D23CDE907004C259F /* 小咖修 */,
+				BA105C4923BF8B0B004C259F /* 视屏解码 */,
 				BA105C4523BE3EC8004C259F /* 视频编码 */,
 				BA105C3D23BA2DE3004C259F /* 裁剪视频 */,
 				BAF9222123AE686F00BB262B /* 提取h264 */,
@@ -756,6 +782,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA105C4C23BF8B42004C259F /* video_decode.c in Sources */,
 				BAF9220C23AE656300BB262B /* ffmpeg_config_info.c in Sources */,
 				BA163E0923AA6F6C001BEEBA /* sdl_player.c in Sources */,
 				280FA8F82334758200F442C8 /* ViewController.m in Sources */,
@@ -767,6 +794,7 @@
 				BAF9220E23AE656300BB262B /* remote_pull_stream.c in Sources */,
 				BA6731CC23608ED5008163EA /* accompany_decoder.cpp in Sources */,
 				BA6731C923608E45008163EA /* packet_pool.cpp in Sources */,
+				BA105C5023CDE921004C259F /* video_mux.c in Sources */,
 				280FA9032334758300F442C8 /* main.m in Sources */,
 				BAF9220D23AE656300BB262B /* camera.c in Sources */,
 				BA6731C623608DF2008163EA /* packet_queue.cpp in Sources */,
