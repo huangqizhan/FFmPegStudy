@@ -43,10 +43,10 @@ int video_mux(const char *src_file1,const char *src_file2,const char *out_file){
     int stream1 = 0, stream2 = 0;
     
     av_log_set_level(AV_LOG_DEBUG);
-    
-    src_file1 = argv[1];
-    src_file2 = argv[2];
-    out_file = argv[3];
+//    
+    src_file1 = src_file1;
+    src_file2 = src_file2;
+    out_file = out_file;
     
     
     //打开两个输入文件

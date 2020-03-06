@@ -20,13 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"1" ofType:@".mp4"];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"1" ofType:@".mp4"];
 ////    dump_info(path.UTF8String);
-    NSString *filep = [PathCommon medioPath:@"test.h264"];
-    NSLog(@"filep = %@",filep);
+//    NSString *filep = [PathCommon medioPath:@"test.h264"];
+//    NSLog(@"filep = %@",filep);
 //    int ret = extrct_audio(path.UTF8String,filep.UTF8String);
 //    NSLog(@"ret = %d",ret);
-    video_exteac(path.UTF8String,filep.UTF8String);
+//    video_exteac(path.UTF8String,filep.UTF8String);
 //    int e = 0x1f & 63;
 //    printf("e = %d",e);
     
