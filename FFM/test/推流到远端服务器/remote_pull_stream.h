@@ -3,7 +3,7 @@
 //  FFM
 //
 //  Created by hjb_mac_mini on 2019/12/19.
-//  Copyright © 2019 8km. All rights reserved.
+//  Copyright © 2019 hqz. All rights reserved.
 //
 
 #ifndef remote_oull_stream_h

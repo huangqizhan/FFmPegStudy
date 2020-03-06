@@ -3,7 +3,7 @@
 //  FFM
 //
 //  Created by hjb_mac_mini on 2020/1/4.
-//  Copyright © 2020 8km. All rights reserved.
+//  Copyright © 2020 hqz. All rights reserved.
 //
 
 #ifndef video_decode_h

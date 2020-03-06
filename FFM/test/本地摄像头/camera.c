@@ -3,7 +3,7 @@
 //  FFM
 //
 //  Created by hjb_mac_mini on 2019/12/21.
-//  Copyright © 2019 8km. All rights reserved.
+//  Copyright © 2019 hqz. All rights reserved.
 //
 
 #include "camera.h"

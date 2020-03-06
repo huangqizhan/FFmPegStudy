@@ -3,7 +3,7 @@
 //  FFM
 //
 //  Created by 黄麒展 on 2020/1/14.
-//  Copyright © 2020 8km. All rights reserved.
+//  Copyright © 2020 hqz. All rights reserved.
 //
 
 #ifndef audio_encode_h
