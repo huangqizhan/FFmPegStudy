@@ -30,8 +30,17 @@
 //    int e = 0x1f & 63;
 //    printf("e = %d",e);
     
+    UIImage *image = [UIImage imageNamed:@"IMG_0032.JPG"];
+    [self yp_imageWithOriginalImage:image withScaleSize:CGSizeMake(image.size.width/3, image.size.height/3)];
     
 }
-
+- (UIImage *)yp_imageWithOriginalImage:(UIImage *)originalImage withScaleSize:(CGSize)size {
+    UIGraphicsBeginImageContext(size);
+    [originalImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
 
 @end

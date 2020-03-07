@@ -42,6 +42,7 @@
 		BA0A6C4224129E3D003585B8 /* ffmpeg_config_info.c in Sources */ = {isa = PBXBuildFile; fileRef = BA0A6C2F24129E3D003585B8 /* ffmpeg_config_info.c */; };
 		BA0A6C4324129E3D003585B8 /* audio_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = BA0A6C3224129E3D003585B8 /* audio_encode.c */; };
 		BA0A6C4424129E3D003585B8 /* camera.c in Sources */ = {isa = PBXBuildFile; fileRef = BA0A6C3624129E3D003585B8 /* camera.c */; };
+		BA0A6C482413704F003585B8 /* IMG_0032.JPG in Resources */ = {isa = PBXBuildFile; fileRef = BA0A6C472413704F003585B8 /* IMG_0032.JPG */; };
 		BA163DF123A27D49001BEEBA /* PathCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = BA163DF023A27D49001BEEBA /* PathCommon.m */; };
 		BA6731C623608DF2008163EA /* packet_queue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA6731C423608DF2008163EA /* packet_queue.cpp */; };
 		BA6731C923608E45008163EA /* packet_pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA6731C723608E45008163EA /* packet_pool.cpp */; };
@@ -215,6 +216,7 @@
 		BA0A6C3324129E3D003585B8 /* audio_encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audio_encode.h; sourceTree = "<group>"; };
 		BA0A6C3524129E3D003585B8 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
 		BA0A6C3624129E3D003585B8 /* camera.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = camera.c; sourceTree = "<group>"; };
+		BA0A6C472413704F003585B8 /* IMG_0032.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0032.JPG; sourceTree = "<group>"; };
 		BA163DEF23A27D49001BEEBA /* PathCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathCommon.h; sourceTree = "<group>"; };
 		BA163DF023A27D49001BEEBA /* PathCommon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PathCommon.m; sourceTree = "<group>"; };
 		BA163DF223A27E62001BEEBA /* Macro.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.pch; sourceTree = "<group>"; };
@@ -656,6 +658,7 @@
 		BA26939A23351DBB000B0135 /* sourse */ = {
 			isa = PBXGroup;
 			children = (
+				BA0A6C472413704F003585B8 /* IMG_0032.JPG */,
 			);
 			path = sourse;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA0A6C482413704F003585B8 /* IMG_0032.JPG in Resources */,
 				280FA9002334758300F442C8 /* LaunchScreen.storyboard in Resources */,
 				280FA8FD2334758200F442C8 /* Assets.xcassets in Resources */,
 				280FA8FB2334758200F442C8 /* Main.storyboard in Resources */,
