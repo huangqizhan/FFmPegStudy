@@ -42,5 +42,8 @@
     
     return image;
 }
+- (void)t{
+    
+}
 
 @end
