@@ -42,12 +42,13 @@
     
     return image;
 }
-<<<<<<< .merge_file_hTfasL
 - (void)t8{
+<<<<<<< .merge_file_Y1ow4t
+    UIImage *image = [UIImage imageNamed:@"IMG_0032.JPG"];
+    [self yp_imageWithOriginalImage:image withScaleSize:CGSizeMake(image.size.width/3, image.size.height/3)];
 =======
-- (void)t{
->>>>>>> .merge_file_uPuhtW
-    
+    NSLog(@"");
+>>>>>>> .merge_file_KlOSTh
 }
 
 @end
