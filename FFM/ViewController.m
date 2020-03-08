@@ -43,7 +43,7 @@
     return image;
 }
 - (void)t8{
-
+    NSLog(@"");
 }
 
 @end
