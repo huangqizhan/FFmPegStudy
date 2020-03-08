@@ -926,7 +926,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = /Users/huangqizhan/Desktop/iosffmlib;
+				LIBRARY_SEARCH_PATHS = /Users/8km_mac_mini/Desktop/iosffmlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.spongeCollege.learnTogether.FFMDD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -951,7 +951,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = /Users/huangqizhan/Desktop/iosffmlib;
+				LIBRARY_SEARCH_PATHS = /Users/8km_mac_mini/Desktop/iosffmlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.spongeCollege.learnTogether.FFMDD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

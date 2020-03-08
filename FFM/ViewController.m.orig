@@ -42,8 +42,12 @@
     
     return image;
 }
+<<<<<<< .merge_file_hTfasL
 - (void)t8{
-
+=======
+- (void)t{
+>>>>>>> .merge_file_uPuhtW
+    
 }
 
 @end
