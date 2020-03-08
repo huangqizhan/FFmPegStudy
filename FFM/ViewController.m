@@ -43,7 +43,8 @@
     return image;
 }
 - (void)t8{
-
+    UIImage *image = [UIImage imageNamed:@"IMG_0032.JPG"];
+    [self yp_imageWithOriginalImage:image withScaleSize:CGSizeMake(image.size.width/3, image.size.height/3)];
 }
 
 @end
