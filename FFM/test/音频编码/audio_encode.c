@@ -55,7 +55,7 @@ static int select_channel_layout(const AVCodec *codec)
         }
         p++;
     }
-    return best_ch_layout;
+    return (int)best_ch_layout;
 }
 
 static void encode(AVCodecContext *ctx, AVFrame *frame, AVPacket *pkt,

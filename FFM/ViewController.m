@@ -30,8 +30,8 @@
 //    int e = 0x1f & 63;
 //    printf("e = %d",e);
     
-    UIImage *image = [UIImage imageNamed:@"IMG_0032.JPG"];
-    [self yp_imageWithOriginalImage:image withScaleSize:CGSizeMake(image.size.width/3, image.size.height/3)];
+//    UIImage *image = [UIImage imageNamed:@"IMG_0032.JPG"];
+//    [self yp_imageWithOriginalImage:image withScaleSize:CGSizeMake(image.size.width/3, image.size.height/3)];
     
 }
 - (UIImage *)yp_imageWithOriginalImage:(UIImage *)originalImage withScaleSize:(CGSize)size {

@@ -208,6 +208,7 @@ int video_decode(const char *in_filename,const char *out_filename) {
                 // 拼接图片路径、名称
                 snprintf(buf, sizeof(buf), "%s/Demo-%d.jpg", out_filename, frame_count);
                 saveJpg(frame, buf); //保存为jpg图片
+//                frame->format
             }
 
             frame_count++;
