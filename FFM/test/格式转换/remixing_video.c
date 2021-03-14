@@ -59,103 +59,105 @@ int remix_video(const char *src, const char *dest){
         ret = AVERROR_UNKNOWN;
         goto fail;
     }
-    
+    AV_VERSION_INT(<#a#>, <#b#>, <#c#>)
     stream_mapping_size = ifmt_ctx->nb_streams;
     
-    stream_mapping = av_malloc_array(stream_mapping_size, sizeof(*stream_mapping));
-    if (!stream_mapping) {
-        ret = AVERROR(ENOMEM);
-        goto fail;
-    }
+    av_malloc_array(2, 2);
     
-    ofmt = ofmt_ctx->oformat;
-    ///给 ofmt_ctx 创建streams
-    for (i = 0; i < ifmt_ctx->nb_streams; i++) {
-        ///输入输出流
-        AVStream *istream = ifmt_ctx->streams[i];
-        AVStream *ostream ;
-        /// 输入流的编码参数
-        AVCodecParameters *inpar = istream->codecpar;
-        
-        ///过滤视频流 音频流 和字幕流
-        printf("inpar->codec_type = %d",inpar->codec_type);
-        if (inpar->codec_type != AVMEDIA_TYPE_SUBTITLE && inpar->codec_type != AVMEDIA_TYPE_AUDIO && inpar->codec_type != AVMEDIA_TYPE_VIDEO) {
-            stream_mapping[i] = -1;
-            continue;
-        }
-        
-        stream_mapping[i] = stream_index++;
-        ///创建输出流
-        ostream = avformat_new_stream(ofmt_ctx, NULL);
-        if (!ostream) {
-            av_log(NULL, AV_LOG_ERROR, "avformat new out stream error");
-            ret = AVERROR_UNKNOWN;
-            goto fail;
-        }
-        /// 输出流设置编码参数
-        ret = avcodec_parameters_copy(ostream->codecpar, istream->codecpar);
-        if (ret < 0) {
-            av_log(NULL, AV_LOG_ERROR, "copy outstream codepar to in stream error");
-            ret = AVERROR_UNKNOWN;
-            goto fail;
-        }
-        ostream->codecpar->codec_tag = 0;
-    }
-    ////打印输出上下文信息
-    av_dump_format(ofmt_ctx, 0, dest, 1);
-    /// 如果输出格式不可写
-    if (!(ofmt->flags & AVFMT_NOFILE)) {
-        /// 重新打开
-        ret = avio_open(&ofmt_ctx->pb, dest, AVIO_FLAG_WRITE);
-        if (ret< 0) {
-            av_log(NULL, AV_LOG_ERROR, "avio open error filename %s",dest);
-            goto fail;
-        }
-    }
+//    stream_mapping = av_malloc_array(stream_mapping_size, sizeof(*stream_mapping));
+//    if (!stream_mapping) {
+//        ret = AVERROR(ENOMEM);
+//        goto fail;
+//    }
     
-    /// 写入header
-    ret = avformat_write_header(ofmt_ctx, NULL);
-    if (ret < 0) {
-        av_log(NULL, AV_LOG_ERROR, "avformat write header error");
-        goto fail;
-    }
-    
-    while (1) {
-        AVStream *in_stream;
-        AVStream *out_stream;
-        ret = av_read_frame(ifmt_ctx, &pkt);
-        if (ret < 0) {
-            break;
-        }
-        in_stream = ifmt_ctx->streams[pkt.stream_index];
-        if (pkt.stream_index >= stream_mapping_size || stream_mapping[pkt.stream_index] < 0) {
-            av_packet_unref(&pkt);
-            break;
-        }
-        
-        pkt.stream_index = stream_mapping[pkt.stream_index];
-        out_stream = ofmt_ctx->streams[pkt.stream_index];
-        log_packet(ifmt_ctx, &pkt, "in");
-        
-        /// copy 数据
-        pkt.pts = av_rescale_q_rnd(pkt.pts, in_stream->time_base, out_stream->time_base, AV_ROUND_NEAR_INF|AV_ROUND_PASS_MINMAX);
-        pkt.dts = av_rescale_q_rnd(pkt.dts, in_stream->time_base, out_stream->time_base, AV_ROUND_NEAR_INF|AV_ROUND_PASS_MINMAX);
-        pkt.duration = av_rescale_q(pkt.duration, in_stream->time_base, out_stream->time_base);
-        pkt.pos = -1;
-        log_packet(ofmt_ctx, &pkt, "out");
-        
-        ///插入pkt
-        ret = av_interleaved_write_frame(ofmt_ctx, &pkt);
-        if (ret < 0) {
-            av_log(NULL, AV_LOG_ERROR, "interleaved error");
-            break;
-        }
-        av_packet_unref(&pkt);
-    }
-    av_write_trailer(ofmt_ctx);
-    
+//    ofmt = ofmt_ctx->oformat;
+//    ///给 ofmt_ctx 创建streams
+//    for (i = 0; i < ifmt_ctx->nb_streams; i++) {
+//        ///输入输出流
+//        AVStream *istream = ifmt_ctx->streams[i];
+//        AVStream *ostream ;
+//        /// 输入流的编码参数
+//        AVCodecParameters *inpar = istream->codecpar;
+//        
+//        ///过滤视频流 音频流 和字幕流
+//        printf("inpar->codec_type = %d",inpar->codec_type);
+//        if (inpar->codec_type != AVMEDIA_TYPE_SUBTITLE && inpar->codec_type != AVMEDIA_TYPE_AUDIO && inpar->codec_type != AVMEDIA_TYPE_VIDEO) {
+//            stream_mapping[i] = -1;
+//            continue;
+//        }
+//        
+//        stream_mapping[i] = stream_index++;
+//        ///创建输出流
+//        ostream = avformat_new_stream(ofmt_ctx, NULL);
+//        if (!ostream) {
+//            av_log(NULL, AV_LOG_ERROR, "avformat new out stream error");
+//            ret = AVERROR_UNKNOWN;
+//            goto fail;
+//        }
+//        /// 输出流设置编码参数
+//        ret = avcodec_parameters_copy(ostream->codecpar, istream->codecpar);
+//        if (ret < 0) {
+//            av_log(NULL, AV_LOG_ERROR, "copy outstream codepar to in stream error");
+//            ret = AVERROR_UNKNOWN;
+//            goto fail;
+//        }
+//        ostream->codecpar->codec_tag = 0;
+//    }
+//    ////打印输出上下文信息
+//    av_dump_format(ofmt_ctx, 0, dest, 1);
+//    /// 如果输出格式不可写
+//    if (!(ofmt->flags & AVFMT_NOFILE)) {
+//        /// 重新打开
+//        ret = avio_open(&ofmt_ctx->pb, dest, AVIO_FLAG_WRITE);
+//        if (ret< 0) {
+//            av_log(NULL, AV_LOG_ERROR, "avio open error filename %s",dest);
+//            goto fail;
+//        }
+//    }
+//    
+//    /// 写入header
+//    ret = avformat_write_header(ofmt_ctx, NULL);
+//    if (ret < 0) {
+//        av_log(NULL, AV_LOG_ERROR, "avformat write header error");
+//        goto fail;
+//    }
+//    
+//    while (1) {
+//        AVStream *in_stream;
+//        AVStream *out_stream;
+//        ret = av_read_frame(ifmt_ctx, &pkt);
+//        if (ret < 0) {
+//            break;
+//        }
+//        in_stream = ifmt_ctx->streams[pkt.stream_index];
+//        if (pkt.stream_index >= stream_mapping_size || stream_mapping[pkt.stream_index] < 0) {
+//            av_packet_unref(&pkt);
+//            break;
+//        }
+//        
+//        pkt.stream_index = stream_mapping[pkt.stream_index];
+//        out_stream = ofmt_ctx->streams[pkt.stream_index];
+//        log_packet(ifmt_ctx, &pkt, "in");
+//        
+//        /// copy 数据
+//        pkt.pts = av_rescale_q_rnd(pkt.pts, in_stream->time_base, out_stream->time_base, AV_ROUND_NEAR_INF|AV_ROUND_PASS_MINMAX);
+//        pkt.dts = av_rescale_q_rnd(pkt.dts, in_stream->time_base, out_stream->time_base, AV_ROUND_NEAR_INF|AV_ROUND_PASS_MINMAX);
+//        pkt.duration = av_rescale_q(pkt.duration, in_stream->time_base, out_stream->time_base);
+//        pkt.pos = -1;
+//        log_packet(ofmt_ctx, &pkt, "out");
+//        
+//        ///插入pkt
+//        ret = av_interleaved_write_frame(ofmt_ctx, &pkt);
+//        if (ret < 0) {
+//            av_log(NULL, AV_LOG_ERROR, "interleaved error");
+//            break;
+//        }
+//        av_packet_unref(&pkt);
+//    }
+//    av_write_trailer(ofmt_ctx);
+//    
 fail:
-    ///释放资源 
+    ///释放资源
     avformat_close_input(&ifmt_ctx);
     if (ofmt_ctx && !(ofmt_ctx->flags & AVFMT_NOFILE)) {
         avio_closep(&ofmt_ctx->pb);

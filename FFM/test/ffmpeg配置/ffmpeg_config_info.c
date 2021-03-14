@@ -112,12 +112,13 @@ char *ffm_av_filter_info(void){
 
 
 void ffmpeg_device(void){
-    avdevice_register_all();
-    AVFormatContext *pFormatCtx = avformat_alloc_context();
-    AVDictionary* options = NULL;
-    av_dict_set(&options,"list_devices","true",0);
-    AVInputFormat *iformat = av_find_input_format("avfoundation");
-    printf("========Device Info=============\n");
-    avformat_open_input(&pFormatCtx,"video=dummy",iformat,&options);
-    printf("================================\n");
+    avdevice_version();
+//    avdevice_register_all();
+//    AVFormatContext *pFormatCtx = avformat_alloc_context();
+//    AVDictionary* options = NULL;
+//    av_dict_set(&options,"list_devices","true",0);
+//    AVInputFormat *iformat = av_find_input_format("avfoundation");
+//    printf("========Device Info=============\n");
+//    avformat_open_input(&pFormatCtx,"video=dummy",iformat,&options);
+//    printf("================================\n");
 }
